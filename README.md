@@ -134,27 +134,35 @@
 - **인프라 요구사항**
     - **S3 버킷 생성**
         - **"모든 퍼블릭 액세스 차단"** 설정을 켜고 버킷을 생성하세요.
+        <img width="1851" height="556" alt="image" src="https://github.com/user-attachments/assets/200b22ae-56d2-45e1-8f31-c9af686f9a59" />
+  
     - **IAM Role**
         - Access Key를 코드에 넣지 말고, S3 접근 권한이 있는 **IAM Role**을 생성해 
         EC2에 연결하세요.
+    <img width="2416" height="1030" alt="image" src="https://github.com/user-attachments/assets/2b3c1ff1-4561-4483-affa-6f1ece76c5f1" />
+
 - **API 요구사항**
     - `POST /api/members/{id}/profile-image`
         - MultipartFile로 이미지를 받아 S3 버킷에 업로드하고, 이미지 URL을 DB에 업데이트하는 기능을 추가하세요
+        <img width="2202" height="1014" alt="image" src="https://github.com/user-attachments/assets/988e419e-a3eb-4472-9d31-ad62e90733f8" />
+
+  
     - `GET /api/members/{id}/profile-image`
         - Presigned URL 을 생성하여 반환하세요. 클라이언트는 이 URL을 통해서만 이미지를 다운로드할 수 있어야 합니다.
         - Presigned URL의 유효기간을 꼭 7일로 설정해주세요
-- **과제 제출 요구사항**
-    
-    <aside>
-    💡
-    
-    Presigned URL은 유효기간이 지나면 접근이 불가능합니다. 채점을 위해 **과제 제출일 
-    기준 유효한 URL**을 새롭게 생성해야 합니다. 
-    
-    🚨 **유효기간 7일 설정 필수!**
-    
-    </aside>
-    
-    - 발급받은 **Presigned URL 1개**와 해당 URL의 만료 시간을 README.md에 기재하세요.
+        - http://43.203.229.185:8080/api/members/1/profile-image
+        <img width="2206" height="1167" alt="image" src="https://github.com/user-attachments/assets/28d835ba-c4c1-41cb-b333-b163550624fa" />
+        <img width="1715" height="637" alt="image" src="https://github.com/user-attachments/assets/731b7885-f7a4-48bf-9419-7ac9eed2ec74" />
+        <img width="1713" height="401" alt="image" src="https://github.com/user-attachments/assets/108ec4bb-ff3d-4b95-8682-4a7c778a9292" />
+        
+
+
+---
+          
+### URL 총정리
+[Presigned Image URL](http://43.203.229.185:8080/api/members/1/profile-image)
+
+[Actuator Info 엔드포인트 URL](http://43.203.229.185:8080/actuator/info)    
+ 
 
        
